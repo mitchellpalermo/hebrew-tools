@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HebrewKeyboard from '../components/HebrewKeyboard';
+---
+
+<Layout
+  title="Hebrew Keyboard"
+  description="Type Biblical Hebrew using a phonetic SBL-style keyboard — no special system keyboard required."
+>
+
+  <!-- ── Page header ───────────────────────────────────────────────────── -->
+  <div class="mb-6">
+    <h1 class="text-3xl font-extrabold mb-2" style="color: var(--color-primary);">
+      Hebrew Keyboard
+    </h1>
+    <p class="text-text-muted leading-relaxed max-w-2xl">
+      Type Biblical Hebrew using phonetic key mappings — no special keyboard layout required.
+      Vowel points (nikud) are added after consonants. Final forms are inserted automatically.
+    </p>
+  </div>
+
+  <!-- ── React component ───────────────────────────────────────────────── -->
+  <HebrewKeyboard client:load />
+
+</Layout>

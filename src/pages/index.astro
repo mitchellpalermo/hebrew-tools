@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Coming Soon">
+<Layout title="Biblical Hebrew Tools">
 
   <!-- ── Hero ──────────────────────────────────────────────────────────── -->
   <div class="text-center pt-16 pb-12">
@@ -24,53 +24,88 @@ import Layout from '../layouts/Layout.astro';
     </h1>
 
     <p class="text-lg text-text-muted max-w-xl mx-auto leading-relaxed">
-      Free, simple utilities for Biblical Hebrew students. Coming soon.
+      Free, simple utilities for Biblical Hebrew students.
     </p>
   </div>
 
-  <!-- ── Coming soon card ──────────────────────────────────────────────── -->
-  <div class="max-w-md mx-auto pb-20">
-    <div class="bg-bg-card rounded-2xl shadow-sm border border-white overflow-hidden">
+  <!-- ── Tools grid ────────────────────────────────────────────────────── -->
+  <div class="max-w-2xl mx-auto pb-20 space-y-4">
 
-      <!-- Green accent strip -->
+    <!-- Keyboard — live -->
+    <a
+      href="/keyboard"
+      class="group block bg-bg-card rounded-2xl shadow-sm border border-white overflow-hidden hover:shadow-md transition-shadow"
+    >
       <div class="h-1.5 w-full" style="background: var(--color-primary);" />
-
-      <div class="p-8 text-center">
-        <!-- Hebrew letter badge -->
+      <div class="p-6 flex items-center gap-5">
         <div
-          class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mx-auto mb-6"
+          class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl shrink-0"
           style="background: #DCFCE7; color: var(--color-primary); font-family: var(--font-hebrew);"
           aria-hidden="true"
         >
-          א
+          אָ
         </div>
-
-        <h2
-          class="text-2xl font-bold mb-3"
-          style="color: var(--color-primary);"
-        >
-          Under Construction
-        </h2>
-
-        <p class="text-text-muted leading-relaxed mb-6">
-          Tools for studying the Hebrew Bible are in the works.
-          Check back soon.
-        </p>
-
-        <!-- Divider -->
-        <div class="border-t border-gray-100 pt-6">
-          <p class="text-sm text-text-muted">
-            In the meantime, check out
-            <a
-              href="https://greek.tools"
-              class="font-semibold underline underline-offset-2 transition-opacity hover:opacity-70"
-              style="color: var(--color-primary);"
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center gap-2 mb-1">
+            <h2 class="text-lg font-bold" style="color: var(--color-primary);">Hebrew Keyboard</h2>
+            <span
+              class="text-xs font-semibold px-2 py-0.5 rounded-full"
+              style="background: #DCFCE7; color: #15803D;"
             >
-              greek.tools
-            </a>
+              Live
+            </span>
+          </div>
+          <p class="text-sm text-text-muted leading-snug">
+            Type Biblical Hebrew with phonetic key mappings — nikud, dagesh, and final forms included.
           </p>
         </div>
+        <svg class="w-5 h-5 text-text-muted shrink-0 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
       </div>
+    </a>
+
+    <!-- Coming soon tools -->
+    {[
+      { label: 'Vocabulary Flashcards', description: 'SRS-based flashcards for Biblical Hebrew vocabulary by frequency.' },
+      { label: 'Daily Verse', description: 'A new Hebrew Bible verse every day with glosses and morphology.' },
+      { label: 'Hebrew Bible Reader', description: 'Read the WLC text with per-word parsing and glosses.' },
+      { label: 'Grammar Reference', description: 'Paradigm tables for nouns, verbs, and the seven binyanim.' },
+    ].map(tool => (
+      <div class="bg-bg-card rounded-2xl border border-white overflow-hidden opacity-60">
+        <div class="h-1.5 w-full" style="background: #D1D5DB;" />
+        <div class="p-6 flex items-center gap-5">
+          <div
+            class="w-14 h-14 rounded-xl flex items-center justify-center text-2xl shrink-0 bg-gray-100 text-gray-400"
+            aria-hidden="true"
+          >
+            ✦
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="flex items-center gap-2 mb-1">
+              <h2 class="text-lg font-bold text-gray-500">{tool.label}</h2>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-100 text-gray-400">
+                Coming soon
+              </span>
+            </div>
+            <p class="text-sm text-text-muted leading-snug">{tool.description}</p>
+          </div>
+        </div>
+      </div>
+    ))}
+
+    <!-- greek.tools link -->
+    <div class="text-center pt-4">
+      <p class="text-sm text-text-muted">
+        Learning Biblical Greek? Check out
+        <a
+          href="https://greek.tools"
+          class="font-semibold underline underline-offset-2 transition-opacity hover:opacity-70"
+          style="color: var(--color-primary);"
+        >
+          greek.tools
+        </a>
+      </p>
     </div>
   </div>
 
